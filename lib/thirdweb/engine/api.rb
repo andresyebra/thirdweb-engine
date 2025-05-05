@@ -25,8 +25,8 @@ module Thirdweb
       end
 
       # @param [String] path
-      # @param [Hash{Symbol => Object}] params
-      # @return [Hash{Symbol => Object}]
+      # @param [Hash{Symbol->Object}] params
+      # @return [Hash{Symbol->Object}]
       def get(path, params = {})
         handle_response do
           @connection.get(path, params)
@@ -34,8 +34,8 @@ module Thirdweb
       end
 
       # @param [String] path
-      # @param [Hash{Symbol => Object}] body
-      # @return [Hash{Symbol => Object}]
+      # @param [Hash{Symbol->Object}] body
+      # @return [Hash{Symbol->Object}]
       def post(path, body = {})
         handle_response do
           @connection.post(path, body)
@@ -44,7 +44,7 @@ module Thirdweb
 
       private
 
-      # @return [Hash{Symbol => Object}]
+      # @return [Hash{Symbol->Object}]
       def headers
         {
           "Authorization" => "Bearer #{Thirdweb::Engine.config.access_token}",
@@ -53,7 +53,7 @@ module Thirdweb
         }
       end
 
-      # @return [Hash{Symbol => Object}]
+      # @return [Hash{Symbol->Object}]
       def handle_response
         response = yield
         case response.status
@@ -75,4 +75,4 @@ module Thirdweb
       end
     end
   end
-end 
+end

@@ -3,7 +3,6 @@
 require_relative "engine/version"
 
 require "dry-configurable"
-require_relative "engine/version"
 require_relative "engine/errors"
 require_relative "engine/api"
 require_relative "engine/configuration"

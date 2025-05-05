@@ -54,11 +54,11 @@ metadata = {
   external_link: "https://example.com"
 }
 
-contract = Thirdweb::Engine::Deploy.nft_collection(metadata)
+contract = Thirdweb::Engine::Deploy.nft_collection(**metadata)
 # => {
 #      "result" => {
 #        "queueId" => "61542a46-0e92-4d4b-a7d5-b532d5d169aa",
-#        "deployedAddress" => "0x4C44583050CcE56617710CFd8Ef501B3C6cC3409"
+#        "deployedAddress" => "0x0000000000000000000000000000000000000000000001"
 #      }
 #    }
 ```
@@ -66,9 +66,9 @@ contract = Thirdweb::Engine::Deploy.nft_collection(metadata)
 ### Minting an NFT
 
 ```ruby
-result = Thirdweb::Engine::ERC721.mint(
-  contract_address: "0x4C44583050CcE56617710CFd8Ef501B3C6cC3409",
-  receiver: "0x2c2c2e82a0baf8a41429226f533e9b62f3640f8d",
+mint = Thirdweb::Engine::ERC721.mint(
+  contract_address: "0x0000000000000000000000000000000000000000000001",
+  receiver: "0x0000000000000000000000000000000000000000000002",
   name: "My NFT",
   description: "My NFT description",
   image: "ipfs://QmciR3WLJsf2BgzTSjbG5zCxsrEQ8PqsHK7JWGWsDSNo46/nft.png"

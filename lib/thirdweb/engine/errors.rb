@@ -28,4 +28,4 @@ module Thirdweb
     # Server errors
     class ServerError < APIError; end
   end
-end 
+end
